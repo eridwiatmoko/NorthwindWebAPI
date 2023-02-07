@@ -1,0 +1,15 @@
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\bin\Debug\net6.0\Northwind.Domain.exe
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\bin\Debug\net6.0\Northwind.Domain.deps.json
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\bin\Debug\net6.0\Northwind.Domain.runtimeconfig.json
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\bin\Debug\net6.0\Northwind.Domain.dll
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\bin\Debug\net6.0\Northwind.Domain.pdb
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.csproj.AssemblyReference.cache
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.AssemblyInfoInputs.cache
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.AssemblyInfo.cs
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.csproj.CoreCompileInputs.cache
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.dll
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\refint\Northwind.Domain.dll
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.pdb
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\Northwind.Domain.genruntimeconfig.cache
+C:\Users\E5470\source\Batch#20\NorthwindWebSolution\Northwind.Domain\obj\Debug\net6.0\ref\Northwind.Domain.dll
