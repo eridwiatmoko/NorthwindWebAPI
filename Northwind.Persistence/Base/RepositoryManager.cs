@@ -14,6 +14,7 @@ namespace Northwind.Persistence.Base
     {
         private AdoDbContext _adoContext;
         private IRegionRepository _regionRepository;
+        private IProductRepository _pruductRepository;
 
         //private Lazy<IRegionRepository> _regionRepositoryLazy;
 
@@ -37,7 +38,16 @@ namespace Northwind.Persistence.Base
             }
         }
 
-
-
+        public IProductRepository ProductRepository
+        {
+            get
+            {
+                if (_pruductRepository == null) 
+                {
+                    _pruductRepository = new ProductRepository(_adoContext);
+                }
+                return _pruductRepository;
+            }
+        }
     }
 }
