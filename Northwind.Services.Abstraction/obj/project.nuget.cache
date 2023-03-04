@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "l6MhY2/QJlzsBdTDioBvT8SD6AkBFnkr6a5UCrVeNVZcyUoGNII4BC8Oniaw+zeWREgRwac3Y3BTlpEWryFJdg==",
+  "dgSpecHash": "IO0GNClTrD/0BDw2CrTytdfs/6KVOVZgbX7WmZ+RRf0QZQ1x8+tuw6f5kwnwsO3Yk8W8s2lv0LVmX7WeR7Oj3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Services.Abstraction\\Northwind.Services.Abstraction.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Services.Abstraction\\Northwind.Services.Abstraction.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\E5470\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\E5470\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\E5470\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

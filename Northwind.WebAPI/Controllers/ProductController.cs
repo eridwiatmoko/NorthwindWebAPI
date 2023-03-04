@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Northwind.Contract.Models;
 using Northwind.Domain.Base;
 using Northwind.Services.Abstraction;
 
@@ -12,26 +14,85 @@ namespace Northwind.WebAPI.Controllers
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly ILoggerManager _logger;
+        private readonly IServiceManager _serviceManager;
 
-        public ProductController(IRepositoryManager repositoryManager, ILoggerManager logger)
+        public ProductController(IRepositoryManager repositoryManager, ILoggerManager logger, IServiceManager serviceManager)
         {
             _repositoryManager = repositoryManager;
             _logger = logger;
+            _serviceManager = serviceManager;
         }
 
         // GET: api/<ProductController>
         [HttpGet]
+        [Authorize]
         public async Task <IActionResult> GetAsync()
         {
             var products = await _repositoryManager.ProductRepository.FindAllProductAsync();
             return Ok(products.ToList());
         }
 
+        [HttpPost("createProductAndUpload"), DisableRequestSizeLimit]
+        public async Task<IActionResult> CreateProductPhoto()
+        {
+            //1. declare formCollection to hold form-data
+            var formColletion = await Request.ReadFormAsync();
+
+            //2. extract files to variable files
+            var files = formColletion.Files;
+
+            //3. hold each ouput formCollection to each variable
+            formColletion.TryGetValue("ProductName", out var productName);
+            formColletion.TryGetValue("SupplierId", out var supplierId);
+            formColletion.TryGetValue("CategoryId", out var categoryId);
+            formColletion.TryGetValue("QuantityPerUnit", out var quantityPerUnit);
+            formColletion.TryGetValue("UnitPrice", out var unitPrice);
+            formColletion.TryGetValue("UnitsOnOrder", out var unitsOnOrder);
+            formColletion.TryGetValue("ReorderLevel", out var reorderLevel);
+            formColletion.TryGetValue("Discontinued", out var discontinued);
+
+            //4. declare variable and store in object 
+            var productCreateDto = new ProductCreateDto
+            {
+                ProductName = productName.ToString(),
+                SupplierId = int.Parse(supplierId.ToString()),
+                CategoryId = int.Parse(categoryId.ToString()),
+                QuantityPerUnit = quantityPerUnit.ToString(),
+                UnitPrice = decimal.Parse(unitPrice.ToString()),
+                UnitsOnOrder = short.Parse(unitsOnOrder.ToString()),
+                ReorderLevel = short.Parse(reorderLevel.ToString()),
+                Discontinued = bool.Parse(discontinued.ToString())
+            };
+
+            //5. store to list
+            var allPhotos = new List<IFormFile>();
+            foreach (var item in files)
+            {
+                allPhotos.Add(item);
+            }
+
+            //6. declare variable productphotogroup
+            var productPhotoGroup = new ProductPhotoGroupDto
+            {
+                ProductForCreateDto = productCreateDto,
+                AllPhotos = allPhotos
+            };
+
+            if (productPhotoGroup != null)
+            {
+                _serviceManager.ProductPhotoServices.InsertProductAndProductPhoto(productPhotoGroup, out var productId);
+                var productResult = _repositoryManager.ProductRepository.FindProductById(productId);
+                return Ok(productResult);
+            }
+
+            return BadRequest();
+        }
+
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            return Ok("value");
         }
 
         // POST api/<ProductController>

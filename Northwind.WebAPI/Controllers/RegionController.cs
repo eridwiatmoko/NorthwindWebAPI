@@ -122,7 +122,11 @@ namespace Northwind.WebAPI.Controllers
             _repositoryManager.RegionRepository.Edit(region);
 
             //forward
-            return CreatedAtRoute("GetRegion", new { id = regionDto.RegionId }, new RegionDto { RegionId = id, RegionDescription = region.RegionDescription});
+            return CreatedAtRoute("GetRegion", new { id = regionDto.RegionId }, new RegionDto 
+            {
+                RegionId = id, 
+                RegionDescription = region.RegionDescription
+            });
         }
 
         // DELETE api/<RegionController>/5

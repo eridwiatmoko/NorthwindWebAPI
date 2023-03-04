@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Domain\\Northwind.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Domain\\Northwind.Domain.csproj",
       "projectName": "Northwind.Domain",
-      "projectPath": "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Domain\\Northwind.Domain.csproj",
+      "projectPath": "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Domain\\Northwind.Domain.csproj",
       "packagesPath": "C:\\Users\\E5470\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Domain\\obj\\",
+      "outputPath": "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

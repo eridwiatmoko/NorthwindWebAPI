@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Contract\\Northwind.Contract.csproj": {}
+    "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Contract\\Northwind.Contract.csproj": {}
   },
   "projects": {
-    "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Contract\\Northwind.Contract.csproj": {
+    "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Contract\\Northwind.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Contract\\Northwind.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Contract\\Northwind.Contract.csproj",
         "projectName": "Northwind.Contract",
-        "projectPath": "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Contract\\Northwind.Contract.csproj",
+        "projectPath": "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Contract\\Northwind.Contract.csproj",
         "packagesPath": "C:\\Users\\E5470\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\E5470\\source\\Batch#20\\NorthwindWebSolution\\Northwind.Contract\\obj\\",
+        "outputPath": "C:\\Users\\E5470\\source\\Batch#20\\Nw\\NorthwindWebAPI\\Northwind.Contract\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
