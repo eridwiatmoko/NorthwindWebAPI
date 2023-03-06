@@ -44,7 +44,7 @@ namespace Northwind.WebAPI.Extensions
             services.AddScoped<IServiceManager, ServiceManager>();
 
         public static void ConfigureAuthenticationManager(this IServiceCollection services) =>
-            services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+         services.AddScoped<IAuthenticationManager, AuthenticationManager>();
 
         public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)
         {

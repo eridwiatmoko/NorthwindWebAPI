@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Northwind.Contract.Models;
 using Northwind.Domain.Base;
+using Northwind.Domain.RequestFeatures;
 using Northwind.Services.Abstraction;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -24,8 +26,7 @@ namespace Northwind.WebAPI.Controllers
         }
 
         // GET: api/<ProductController>
-        [HttpGet]
-        [Authorize]
+        [HttpGet, Authorize(Roles ="Manager")]        
         public async Task <IActionResult> GetAsync()
         {
             var products = await _repositoryManager.ProductRepository.FindAllProductAsync();
@@ -89,10 +90,24 @@ namespace Northwind.WebAPI.Controllers
         }
 
         // GET api/<ProductController>/5
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet("paging")]
+        public async Task<IActionResult> GetProductPaging([FromQuery] ProductParameters productParameters)
         {
-            return Ok("value");
+            var products = await _repositoryManager.ProductRepository.GetProductPaging(productParameters);
+            return Ok(products);
+        }
+
+        [HttpGet("pageList")]
+        public async Task<IActionResult> GetProductPageList([FromQuery] ProductParameters productParameters)
+        {
+            if (!productParameters.ValidateStockRange)
+                return BadRequest("Maxstock must greater than Minstock");
+
+            var products = await _repositoryManager.ProductRepository.GetProductPageList(productParameters);
+
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(products.MetaData));
+
+            return Ok(products);
         }
 
         // POST api/<ProductController>

@@ -57,8 +57,8 @@ namespace Northwind.Persistence.Base
 
         public ISupplierRepository SupplierRepository => _supplierRepositoryLazy.Value;
 
-        public IUserRepository UserRepository => _userRepositoryLazy.Value;
 
         public IProductPhotoRepository ProductPhotoRepository => _productPhotoRepositoryLazy.Value;
+        public IUserRepository UserRepository => _userRepositoryLazy.Value;
     }
 }

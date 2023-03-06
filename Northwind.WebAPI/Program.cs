@@ -53,8 +53,8 @@ internal class Program
 
         app.UseCors("CorsPolicy");
 
-        app.UseAuthorization();
-        app.UseAuthentication();
+        app.UseAuthentication(); // check apakah user bawa token
+        app.UseAuthorization(); // check user apakah berhak untuk akses resources
 
         app.MapControllers();
 
